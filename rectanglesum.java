@@ -1,18 +1,30 @@
 import java.util.Scanner ;
 public class rectanglesum{
+    public static void Display_matrix(int[][] arr){
+        for (int i  = 0 ; i < arr.length ; i++){
+        for(int j = 0 ; j < arr[i].length ; j++)
+        System.out.print(arr[i][j]+" ");
+        System.out.println();
+    }}
     public static void rsum(int[][] mat , int r1 ,int c1 , int r2 , int c2 ){
        int sum = 0 ;
 
     //    root force approach
 
-    //    for (int i = r1 ; i <= r2 ; i++){
-    //    for(int j = c1 ; j <= c2 ; j++)
+    //    for (int i = r1 ; i = r2 ; i++){
+    //    for(int j = c1 ; j = c2 ; j++)
     //    sum += mat[i][j] ; }
 
     // by prifix rows for n Quarries 
-
-    
+  
+     for (int i = 0 ; i < mat.length ; i++){
+        
+        for (int j = 1 ; j < mat[0].length ; j++){
+            mat[i][j] += mat[i][j-1] ;
+        }
+     }
         System.out.println("sum is :- "+ sum);
+        Display_matrix(mat);
     }
         public static void main(String[] args) { 
     Scanner sc = new Scanner(System.in);
@@ -33,7 +45,8 @@ public class rectanglesum{
       int r2 = sc.nextInt();
       System.out.print(" c2 :- ");
       int c2 = sc.nextInt();   
-        rsum(arr, r1, c1, r2, r2);
+        rsum(arr, r1, c1, r2, c2);
+        sc.close();
         }
     }
 

@@ -1,11 +1,14 @@
 import java.util.Scanner ;
 public class rectanglesum{
-   public static void prefixmatrix(int[][] mat ){
-       for (int i = 0 ; i < mat.length ; i++){
-        for (int j = 1 ; j < mat[0].length ; j++){
-            mat[i][j] += mat[i][j-1] ;
-        }
-     }
+//    public static void prefixmatrix(int[][] mat ){
+//        for (int i = 0 ; i < mat.length ; i++){
+//         for (int j = 1 ; j < mat[0].length ; j++){
+//             mat[i][j] += mat[i][j-1] ;
+//         }
+//      }
+//    }
+public static void prefixmatrix(int[][] mat ){
+       
    }
     public static void rsum(int[][] mat , int r1 ,int c1 , int r2 , int c2 ){
        int sum = 0 ;
@@ -18,14 +21,14 @@ public class rectanglesum{
 
     // by prifix rows for n Quarries 
         
-       for (int i = r1 ; i <= r2 ; i++){
+       for (int i = r1 ; i <= r2 ; i++)
         sum += mat[i][c2] ;
-       }
+       
          if(c1 != 0){
             int temp = 0 ;
-          for(int i = r1 ; i <= r2 ; i++){
+          for(int i = r1 ; i <= r2 ; i++)
                temp += mat[i][c1-1] ; 
-          }
+          
           sum = sum-temp ;
          }
         System.out.println("sum is :- "+ sum);
@@ -51,7 +54,7 @@ public class rectanglesum{
       System.out.print(" c2 :- ");
       int c2 = sc.nextInt(); 
       prefixmatrix(arr);  
-        rsum(arr, r1, c1, r2, c2);
+      rsum(arr, r1, c1, r2, c2);
 
         sc.close();
         }

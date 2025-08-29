@@ -8,8 +8,13 @@ public class rectanglesum{
 //      }
 //    }
 public static void prefixmatrix(int[][] mat ){
-       
-   }
+         
+       for (int i = 0 ; i < mat.length ; i++)
+        for (int j = 1 ; j < mat[0].length ; j++)
+            mat[i][j] += mat[i][j-1] ;
+     }
+    
+   
     public static void rsum(int[][] mat , int r1 ,int c1 , int r2 , int c2 ){
        int sum = 0 ;
 

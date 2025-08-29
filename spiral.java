@@ -52,6 +52,7 @@ public class spiral{
            System.out.println("spiral oder matrix is :-");
            int [][] arr = new int[r][c] ;
            prints(arr,r,c);
+           sc.close();
          
 }
 }
